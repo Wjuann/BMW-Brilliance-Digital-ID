@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "bmw_group_blod";
+  src: url('BMWGroup_Cond_Bold.ttf');
+}
+
+@font-face {
+  font-family: "bmw_group_blod_italic";
+  src: url('BMWGroup_Cond_BoldItalic.ttf');
+}
+
+@font-face {
+  font-family: "bmw_group_italic";
+  src: url('BMWGroup_Cond_Italic.ttf');
+}
+
+@font-face {
+  font-family: "bmw_group_regular";
+  src: url('BMWGroup_Cond_Regular.ttf');
+}

@@ -1,0 +1,503 @@
+<html lang="en"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<link href="./login2.css" rel="stylesheet">
+	<link rel="icon" href="./img/logo.png">
+	<link href="bootstrap.min.css" rel="stylesheet">
+	<link href="font/family.css">
+	<link href="./font-awesome/index.css" rel="stylesheet">
+	<title>Digital ID</title>
+
+	<style>
+		.n-login:not([__null__]) .n-login-tabs {
+			display: flex;
+			justify-content: space-around;
+		}
+	</style>
+
+
+</head>
+
+<body style="">
+	<div class="n-login" style="transform: scale(0.888889); height: 693px;">
+		<div>
+			<div class="n-slogan">
+				<span i18n="pic_slogan">Please do not save this page to bookmarks or favorites. If you want to save the required page to your browser, please login first.</span>
+			</div>
+		</div>
+
+		<article class="n-login-right">
+			<main>
+				<div class="n-login-title">
+					<i style="cursor:default"><img src="./img/5.png" style="cursor:default" alt="">Digital ID</i>
+					<span>
+						<em class="" id="lang_chinese" name="btnradio">中文</em>
+						<i>/</i>
+						<em id="lang_english" name="btnradio" class="n-login-title-cur">English</em>
+					</span>
+				</div>
+
+
+				<p class="n-login-switchAcc">
+					<!-- 
+					<a href="#" id="create_account">
+						<span i18n="CreateAccount">Create Account</span>
+						<img src="img/CreateUserNew.png" alt="">
+					</a>  
+					-->
+				</p>
+
+				<ul class="n-login-tabs" n-tab-parent="1">
+					<li n-tab=".n-login-qrcode" class="" i18n="tabs_QRCode">QR Code</li>
+					<li n-tab=".n-login-sms" i18n="tabs_Login" class="n-login-tabs-cur">Login</li>
+					<!-- <li n-tab=".n-login-webeam" i18n="tabs_WebEAM" class="">WebEAM</li> -->
+				</ul>
+
+
+
+
+				<!-- author: wang.juan.dc@bmw-brilliance.cn -->
+				<!-- QR code-->
+				<ul class="n-login-form n-login-qrcode" style="display: none;">
+					<li class="n-login-form-qrCode">
+						<p><span i18n="joychat_title_one">Please scan code via </span> <span class="joychat">BBA
+								JoyChat</span></p>
+						<!-- 二维码图片 -->
+						<div>
+							<img class="n-login-qrCode-pic" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADIAQAAAACFI5MzAAABr0lEQVR42u2YXWrDQAyEBbrWgq4u0LUE2xmtSZ2GvkmQB5vQ1PsZvJod/RDZ/13ykId8DXERxV/duZbtOLcDJPCJSNHgYxa1MkG81mIXjet2hrgs4TLZJMmFCKnoxw4aCaFtX5ZWT+wZ4hXj6/rjnT7CK5U2cbGPXOgjLoqDW4Ig8Xb8t2yGQEp1ruMbJlkyQyLqc+yeb07sJYxTmbtpDDtfkfaSRIwoR7Lw5hS77aCXIDw6ffPLeOM2QhBj5TDTl8fG/UyQEhKKwo+MVdNihLimiHkpyvT9VbSXwIOL6XS8/qZ1K9l8cZ0dE0zjpnUvSa5jBTGzKumrwvYSvJBBQlU8o8kDHCGUkC6hR9g1dtoQ2Tyr05mOVUbIroSqmYGW95vWrYS1iGklZQ6/K9pKvCx4TQ4I+NZLWkn4uiLMqheaOkNQhM74iLaUb7NLL0GU2AS3gQS7BpQBUibB2mZFyuOPCVJV9eoTnMF96QiJEpUFvZrTGfInCCdv5C6UrAH8rnU74YxSneNqTEPk6uXVOuyWC62kapKe4a7qXoyQqkVZE3GWmq4j5Pkt4CHfTH4A3WVwNz9AQ+sAAAAASUVORK5CYII=" id="qrcode_img" alt="">
+							<!-- 灰色蒙层 -->
+							<div class="img-background" id="background" style="display: none;"></div>
+							<div class="img-background" id="background"></div>
+							<!-- 加载背景图 -->
+							<div class="img-background-loading" id="background-load" style="display: none;">
+								<!-- <img src="./img/did.gif" alt="">  --> 
+							</div>
+							<!-- 扫码加载的时候加载这个套DIV -->
+							<div class="qr_loading" id="qr_loading_show" style="display: none;">
+								<!-- <ul>
+									<li></li>
+									<li></li>
+									<li></li>
+								</ul> -->
+								<p id="qrcode_p" i18n="">undefined</p>
+							</div>
+							<!-- 扫码失败或者拒绝的时候加载刷新 -->
+							<!-- <div class="qr_error" id="qr_error_show" style="display: none;">
+								<div>
+									<img id="Refresh" src="./img/not Scan.png" alt="">
+									<p id="qrcode_p_error" i18n="">undefined</p>
+								</div>
+							</div> -->
+						</div>
+
+
+					</li>
+				</ul>
+
+				<!-- Login -->
+				<ul class="n-login-form n-login-sms" style="">
+					<li class="n-login-form-input">
+						<img src="./img/51.png" alt="">
+						<input type="text" placeholder="Username" i18n="username" id="username">
+					</li>
+
+					<li class="n-login-form-input " view-pwd="1">
+						<img src="./img/52.png" alt="">
+						<input type="password" placeholder="Password" i18n="password_tip" id="password">
+						<img class="n-login-viewPwd" src="img/54.png" alt="">
+					</li>
+					<!-- 数据异常 -->
+					<li class="n-login-form-err" id="SMSerrorMsg"></li>
+					<li class="n-login-form-btn">
+						<button id="smsLogin" i18n="button_login">Login</button>
+					</li>
+					<li class="n-login-form-tip">
+						<a href="./forget_passwd.html" i18n="can_not_login" target="_blank">Can't Login?</a>
+					</li>
+				</ul>
+
+				<!-- webeam -->
+				<ul class="n-login-form n-login-webeam" style="display: none;">
+					<li class="n-login-form-btn">
+						<a href="#" id="id_href_b2b" i18n="Webeam_Q/QXAccount_intranet">Login with BMW Group Q/QX Account (BMW Office Network)</a>
+					</li>
+					<li class="n-login-form-btn2">
+						<a href="#" id="id_href_b2bmfa" i18n="Webeam_Q/QXAccount_internet">Login with BMW Group Q/QX Account (Public Network)</a>
+					</li>
+					<li class="n-login-form-or">
+						<i></i><em>Or</em><i></i>
+					</li>
+					<li class="n-login-form-btn3">
+						<a href="#" id="id_href_b2d" i18n="Webeam_B2DAccount">Login with BMW Group B2D Account</a>
+					</li>
+					<li class="n-login-form-tip2">
+						<span i18n="Warn-little-one" style="word-spacing:2px">Great News for BMW Group account users</span>
+						<br><br>
+						<span style="word-spacing:2px" i18n="Warn-little-five">Now you can use your BMW Group account (Q/QX/B2D) directly to access BBA apps without creating a new account and password</span>
+					</li>
+				</ul>
+
+
+
+
+				<li class="n-login-footer">
+					<a href="DID_Login Page User Manual_PRDv1.4.pdf" target="_blank" i18n="menu">User Manual</a>
+					<i>|</i>
+					<a href="#" data-bs-toggle="modal" id="id_read_privacy" data-bs-target="#exampleModal" i18n="read_privacy">Privacy Policy</a>
+					<i>|</i>
+					<a href="#" i18n="contact_us" id="show_contact" data-bs-target="#contactus" data-bs-toggle="modal">Contact Us</a>
+				</li>
+
+
+			</main>
+		</article>
+
+	</div>
+
+	<!-- 隐私政策 ps:隐私政策弹出框位置需要注意 不然容易与上述css样式产生冲突 -->
+	<div class="modal fade yinsi-content" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content ">
+				<div class="modal-header">
+					<h5 i18n="read_privacy" class="modal-title" id="exampleModalLabel">Privacy Policy</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<!-- 内容主体 -->
+				<div class="modal-body" id="yinsi"></div>
+				<div class="modal-footer">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 联系我们 -->
+	<div class="modal fade yinsi-content" id="contactus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content ">
+				<div class="modal-header">
+					<h5 i18n="contact_us" class="modal-title" id="exampleModalLabel">Contact Us</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<!-- 内容主体 -->
+				<div class="modal-body" id="yinsi">
+					<div style="margin-top: auto;">
+						<p class="contact_lync" id="contact_lync" i18n="Warn-contact">Contact us (IAM 3rd Level Support)</p>
+						<p class="contact_email" id="contact_email" i18n="Warn-Email">Email : IAM3rdLevelSupport@bmw-brilliance.cn</p>
+					</div>
+				</div>
+				<div class="modal-footer">
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- 表单提交用 -->
+	<div style="display: none;">
+		<label>SMS FORM</label>
+		<form id="oam_sumbit_form" style="display: none;" method="post" name="oam_sumbit_form"></form>
+	</div>
+
+
+
+<script src="./jquery-3.5.1.min.js"></script>
+
+<script src="./util_vms.js"></script>
+<script>
+	// 隐藏页面元素
+	$('body').hide();
+
+	//获取当前语言
+	function showLang(current_lang) {
+		if (current_lang == 'zh') {
+			//checked
+			$("#lang_chinese").attr("class", 'n-login-title-cur');
+			$("#lang_english").attr("class", '');
+		} else if (current_lang == 'en') {
+			$("#lang_chinese").attr("class", '');
+			$("#lang_english").attr("class", 'n-login-title-cur');
+		}
+	}
+
+
+	let msgType = "other";
+	// SMS处理登入没输入账号密码 或者 验证码的结果
+	const loginalert = (message, type, i18n) => {
+		console.log(message)
+		msgType = i18n == 'sms-b07' ? "send" : "other"
+		$("#SMSerrorMsg").html(
+			`<span id="loginmove" style="color:${type == "warning" ? 'red' : 'green'}" i18n="${i18n}">${message} </span>`
+			);
+	}
+
+	window.addEventListener('load', () => {
+
+		// 显示页面元素
+		$('body').show();
+
+
+		// 二维码
+		getjoychartimage("#qrcode_img");
+
+		//语言切换
+		// loadI18n();
+
+		// showLang(getI18nLang());
+
+		//add handleEvent for switch lang
+		$("#lang_chinese").click(function () {
+			// getSignVersion(getSignVersionUICallback);
+			$("#yinsi").html(cnyinsiContent);
+			swithI18nZh();
+		});
+		$("#lang_english").click(function () {
+			// getSignVersion(getSignVersionUICallback);
+			$("#yinsi").html(enyinsiContent);
+			swithI18nEn();
+		});
+
+		
+
+
+		// isOAM 1 没有OAM报错 不是GPM
+		// isOAM 2 有OAM报错 不是GPM
+		// isOAM 3 没有OAM报错 是GPM
+		let isOAM = 1;
+		// 验证URL地址栏
+		function callSMSLoginUICallback() {
+			// alert("SUBMIT ERROR");
+			let oam_error_msg = processOAMError();
+			console.log("oam_error_msg=----------", oam_error_msg)
+			if (oam_error_msg.msg) {
+				showOAMError(oam_error_msg);
+				isOAM = 2;
+			} else {
+				let gpmUrl = getGpmUrl()
+				if (gpmUrl) {
+					isOAM = 3;
+				} else {
+					isOAM = 1;
+				}
+			}
+		}
+
+		function showOAMError(oam_error_msg) {
+			console.log(oam_error_msg)
+			if (localStorage.getItem('ntabsCur') == 1) {
+				console.log(oam_error_msg.msg)
+				loginalert(oam_error_msg.msg, 'warning', oam_error_msg.i18n);
+			}
+		}
+
+		callSMSLoginUICallback();
+
+
+
+
+		const q = (s, all) => document[all ? 'querySelectorAll' : 'querySelector'](s);
+
+		// 中英文样式切换
+		q('.n-login-title>span>em', 1).forEach(el => el.addEventListener('click', () => {
+			q('.n-login-title>span>em', 1).forEach(c => c.classList[c === el ? 'add' : 'remove'](
+				'n-login-title-cur'))
+		}))
+
+		// 导航栏切换
+		var account = 0;
+		let ntabsCur = 0;
+		if (isOAM == 1) {
+			ntabsCur = 0
+		} else if (isOAM == 2) {
+			ntabsCur = localStorage.getItem('ntabsCur') || 0
+		} else {
+			ntabsCur = 2
+		}
+		q('.n-login-tabs>li', 1).forEach((el, index) => el.addEventListener('click', () => {
+			localStorage.setItem('ntabsCur', index);
+
+			q('.n-login-tabs>li', 1).forEach(c => {
+				c.classList[c === el ? 'add' : 'remove']('n-login-tabs-cur');
+				q(c.getAttribute('n-tab'), 1).forEach(f => f.style.display = 'none');
+			})
+
+			q(el.getAttribute('n-tab'), 1).forEach(f => f.style.display = '');
+
+			// 点击切换执行二维码更新
+			if (el.innerHTML == "Login" || el.innerHTML == "账号密码") {
+				times = true;
+				clearInterval(starttimer)
+			} else if (el.innerHTML == "WebEAM") {
+				times = true;
+				clearInterval(starttimer)
+			} else if (el.innerHTML == "QR Code" || el.innerHTML == "扫码") {
+				clearInterval(starttimer)
+				if (account == 0 && isOAM == 3) {
+					document.getElementById("background").style.display = "none";
+					document.getElementById("background-load").style.display = "none";
+					document.getElementById("qr_loading_show").style.display = "none";
+					document.getElementById("qr_error_show").style.display = "none"
+					document.getElementById("qr_error_show").style.display = "none"
+					times = false;
+					getjoychartimage("#qrcode_img");
+				} else {
+					// 标记用户为第一次登录，计数器变更
+					if (account == 0 && isOAM != 3) {
+						account++;
+					} else {
+						document.getElementById("background").style.display = "none";
+						document.getElementById("background-load").style.display = "none";
+						document.getElementById("qr_loading_show").style.display = "none";
+						document.getElementById("qr_error_show").style.display = "none"
+						times = false;
+						getjoychartimage("#qrcode_img");
+					}
+
+				}
+			}
+
+			if (localStorage.getItem("ntabsCur") == index && (el.innerHTML == "Login" || el
+					.innerHTML == "账号密码")) {
+				$("#username").val("");
+				$("#password").val("");
+				// $("#loginmove").remove();
+			} else if (localStorage.getItem("ntabsCur") == index && (el.innerHTML == "QR Code" || el
+					.innerHTML == "扫码")) {
+				$("#username").val("");
+				$("#password").val("");
+				$("#loginmove").remove();
+			} else if (localStorage.getItem("ntabsCur") == index && el.innerHTML == "WebEAM") {
+				$("#username").val("");
+				$("#password").val("");
+				$("#loginmove").remove();
+			}
+
+		}))
+
+		q('.n-login-tabs>li', 1)[ntabsCur].click();
+
+
+		// scale缩放适配
+		const resize = () => {
+			let {
+				innerWidth: w,
+				innerHeight: h,
+				devicePixelRatio: dpr = 1
+			} = window;
+
+			// w *= dpr;
+			let scale = 1,
+				boxW;
+			if (w <= 750) scale = 1;
+			else if (dpr >= 1 && w <= 1440) scale = w / 1440;
+			else if (dpr !== 1 && w > 1440) {
+				boxW = 1920
+				scale = w / 1920;
+			}
+
+			q('.n-login').style.transform = scale === 1 ? '' : `scale(${scale})`;
+			q('.n-login').style.width = !boxW ? '' : `${boxW}px`;
+			q('.n-login').style.height = scale === 1 ? '' : `${h / scale}px`;
+
+
+			// 小于750px使用rem布局
+			q('html').style.fontSize = w > 750 ? '' : w / 7.5 + 'px';
+		}
+		window.addEventListener('resize', resize);
+		resize();
+
+
+		// 密码显隐
+		q('[view-pwd]', 1).forEach(el => {
+
+			const eye = el.querySelector('.n-login-viewPwd');
+			const input = el.querySelector(':scope>input');
+			if (!eye || !input) return;
+			let isView = true;
+			const change = () => {
+				isView = !isView;
+				input.type = isView ? 'text' : 'password';
+				// 眼睛的2种形态图片 
+				eye.src = isView ? 'img/56.png' : 'img/54.png';
+			}
+			eye.addEventListener('click', change)
+			change();
+		})
+
+		// Login登录按钮
+		let sms_click = true;
+		q('#smsLogin').onclick = () => {
+			var input_username = $("#username").val();
+			var input_password = $("#password").val();
+			if (input_username && input_password) {
+				if (sms_click) {
+					sms_click = false;
+					callFromUILogin("#username", "#password", "#oam_sumbit_form");
+				}
+			} else {
+				if (!input_username && !input_password) {
+					loginalert(i18n.get('unkonw_user_tips'), 'warning', 'unkonw_user_tips');
+				} else if (!input_username) {
+					// 请填写账号信息
+					loginalert(i18n.get('unkonw_user_tips_news'), 'warning', 'unkonw_user_tips_news');
+				} else if (!input_password) {
+					// 请填写密码信息
+					loginalert(i18n.get('unkonw_user_password'), 'warning', 'unkonw_user_password')
+				}
+			}
+		}
+
+
+		// B2D Account 点击事件
+		q("#id_href_b2d").onclick = () => {
+			// window.open(getWebEAMB2D(), "B2D", "status=1,toolbar=1");
+			window.location.href = getWebEAMB2D()
+		}
+		// Q/QX Account 外网点击事件
+		q("#id_href_b2bmfa").onclick = () => {
+			// window.open(getWebEAMB2BMFA(), "B2BMFA", "status=1,toolbar=1");
+			window.location.href = getWebEAMB2BMFA()
+		}
+		// Q/QX Account 内网点击事件
+		q("#id_href_b2b").onclick = () => {
+			// window.open(getWebEAMB2B(), "B2BMFA", "status=1,toolbar=1");
+			window.location.href = getWebEAMB2B()
+		}
+		// Refresh_button
+		q("#Refresh").onclick = () => {
+			// 二维码代码
+			clearInterval(starttimer);
+			document.getElementById("background").style.display = "none";
+			document.getElementById("background-load").style.display = "none";
+			document.getElementById("qr_loading_show").style.display = "none";
+			document.getElementById("qr_error_show").style.display = "none";
+			getjoychartimage("#qrcode_img");
+			times = false;
+		}
+
+		// 创建账户
+		q("#create_account").onclick = () => {
+			window.open(getB2bUrl());
+		}
+
+		// 隐私政策弹出框
+		var enyinsiContent;
+		var cnyinsiContent;
+
+		function getSignVersionUICallback(res) {
+			if (!res || res.code !== 200 || !res.data[0]) return;
+
+			enyinsiContent = res.data[0].enPdfUrl;
+			cnyinsiContent = res.data[0].cnPdfUrl;
+
+			if (getI18nLang() == "en") $("#yinsi").html(enyinsiContent);
+			else $("#yinsi").html(cnyinsiContent);
+		}
+
+		getSignVersion(getSignVersionUICallback);
+
+
+	})
+</script>
+
+</body></html>
