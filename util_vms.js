@@ -2,7 +2,7 @@
 const base_url = "http://47.93.63.243:8083";
 
 // base b2b url
-const b2b_url = "http://47.93.63.243:8083"
+const b2b_url = "http://47.93.63.243:8083" 
 
 //service for send sms/netiq code 
 // server/tpmfserver/auth/sendAuthCode2 发送短信验证吗需要验证账号和密码
