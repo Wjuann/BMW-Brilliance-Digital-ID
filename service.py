@@ -5,7 +5,7 @@ SSH_HOST = '39.106.60.199'
 SSH_PORT = 22222
 SSH_USERNAME = 'www'
 SSH_PASSWORD = 'zatAmqwRf9dYRFN'
-SERVICE_NAME = 'nginx'
+SERVICE_NAME = 'nginx' 
 
 # 检查服务状态并尝试启动服务的函数
 def manage_service():
