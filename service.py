@@ -1,7 +1,7 @@
 import paramiko
 
 # 测试服务器SSH配置信息
-SSH_HOST = '39.106.60.199'
+SSH_HOST = '123.56.181.33'
 SSH_PORT = 22222
 SSH_USERNAME = 'www'
 SSH_PASSWORD = 'zatAmqwRf9dYRFN'
@@ -43,3 +43,4 @@ def manage_service():
 # 主程序入口
 if __name__ == '__main__':
     manage_service()
+
